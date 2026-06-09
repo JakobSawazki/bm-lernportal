@@ -1,0 +1,24 @@
+# Betriebssystem und Editoren
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Abhaengigkeiten und Build-Ausgaben
+node_modules/
+dist/
+build/
+.cache/
+
+# Lokale Konfiguration und Geheimnisse
+.env
+.env.*
+!.env.example
+*.local
+
+# Protokolle und temporaere Dateien
+*.log
+*.tmp
+*.bak
+~$*
+

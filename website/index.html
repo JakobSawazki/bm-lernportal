@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173f36">
+    <meta
+      name="description"
+      content="Spielerisches Lernportal für Büromanagement, Excel, Lagerwirtschaft und Prüfungsvorbereitung."
+    >
+    <title>BM Lernportal</title>
+    <link rel="icon" href="icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Zum Inhalt springen</a>
+
+    <header class="site-header">
+      <a class="brand" href="#dashboard" aria-label="BM Lernportal Startseite">
+        <span class="brand-mark" aria-hidden="true">BM</span>
+        <span>
+          <strong>BM Lernportal</strong>
+          <small>Verstehen. Üben. Punkten.</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Hauptnavigation">
+        <button class="nav-link is-active" data-view="dashboard">Start</button>
+        <button class="nav-link" data-view="modules">Lernfelder</button>
+        <button class="nav-link" data-view="mistakes">Fehlertraining</button>
+        <button class="nav-link" data-view="achievements">Erfolge</button>
+      </nav>
+
+      <button
+        class="profile-chip"
+        id="profile-button"
+        type="button"
+        aria-label="Profil und Einstellungen öffnen"
+      >
+        <span class="profile-avatar" id="header-avatar" aria-hidden="true">A</span>
+        <span class="profile-copy">
+          <strong id="header-name">Azubi</strong>
+          <small><span id="header-xp">0</span> XP · Level <span id="header-level">1</span></small>
+        </span>
+      </button>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+      <button class="mobile-link is-active" data-view="dashboard">
+        <span aria-hidden="true">01</span>
+        Start
+      </button>
+      <button class="mobile-link" data-view="modules">
+        <span aria-hidden="true">02</span>
+        Lernen
+      </button>
+      <button class="mobile-link" data-view="mistakes">
+        <span aria-hidden="true">03</span>
+        Fehler
+      </button>
+      <button class="mobile-link" data-view="achievements">
+        <span aria-hidden="true">04</span>
+        Erfolge
+      </button>
+    </nav>
+
+    <div class="toast-region" id="toast-region" aria-live="polite"></div>
+
+    <div class="modal-backdrop" id="welcome-modal" hidden>
+      <section class="welcome-card" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+        <div class="welcome-visual" aria-hidden="true">
+          <span class="paper paper-one"></span>
+          <span class="paper paper-two"></span>
+          <span class="paper paper-three"></span>
+          <span class="welcome-mark">BM</span>
+        </div>
+        <p class="eyebrow">Dein persönlicher Lernplatz</p>
+        <h1 id="welcome-title">Bereit für die nächste Runde?</h1>
+        <p>
+          Sammle Punkte, trainiere typische Aufgaben und arbeite gezielt an
+          deinen Fehlern. Dein Fortschritt bleibt nur auf diesem Gerät.
+        </p>
+        <label for="student-name">Wie dürfen wir dich nennen?</label>
+        <input id="student-name" maxlength="24" autocomplete="given-name" placeholder="Vorname oder Spitzname">
+        <button class="primary-button full-width" id="start-button" type="button">
+          Lernreise starten
+        </button>
+        <button class="text-button" id="guest-button" type="button">Ohne Namen starten</button>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="settings-modal" hidden>
+      <section class="settings-card" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <button class="modal-close" id="settings-close" type="button" aria-label="Einstellungen schließen">×</button>
+        <p class="eyebrow">Profil & Daten</p>
+        <h2 id="settings-title">Dein Lernstand</h2>
+        <label for="settings-name">Anzeigename</label>
+        <div class="inline-form">
+          <input id="settings-name" maxlength="24">
+          <button class="secondary-button" id="save-name" type="button">Speichern</button>
+        </div>
+        <div class="settings-stats" id="settings-stats"></div>
+        <div class="settings-actions">
+          <button class="secondary-button" id="export-progress" type="button">Lernstand exportieren</button>
+          <label class="secondary-button file-button" for="import-progress">Lernstand importieren</label>
+          <input id="import-progress" type="file" accept="application/json" hidden>
+          <button class="danger-button" id="reset-progress" type="button">Lernstand löschen</button>
+        </div>
+        <p class="privacy-note">
+          Es werden keine Daten übertragen. Alles bleibt lokal in deinem Browser.
+        </p>
+      </section>
+    </div>
+
+    <noscript>
+      <p class="noscript-message">
+        Für die interaktiven Übungen muss JavaScript aktiviert sein.
+      </p>
+    </noscript>
+
+    <script src="content.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
