@@ -12,7 +12,7 @@ ein lokales Punktesystem.
 
 | Merkmal | Stand |
 | --- | --- |
-| Release | `1.0.0` |
+| Release | `1.0.1` |
 | Stichtag | 9. Juni 2026 |
 | Projektphase | Erste produktive Fassung |
 | Website-Quellcode | Vollständig in `website/` |
@@ -109,7 +109,7 @@ Das Projekt verwendet semantische Versionsnummern:
 - Minor-Version: Rueckwaertskompatible neue Inhalte oder Funktionen
 - Major-Version: Grundlegende, nicht kompatible Neuausrichtung
 
-Aktueller Stand: `1.0.0`
+Aktueller Stand: `1.0.1`
 
 ## Lokal starten
 

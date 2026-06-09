@@ -8,7 +8,7 @@ vorbereitet.
 
 ## Aktueller Versionsstand
 
-- Version: `1.0.0`
+- Version: `1.0.1`
 - Datum: 9. Juni 2026
 - Branch: `main`
 - Remote: `https://github.com/JakobSawazki/bm-lernportal.git`

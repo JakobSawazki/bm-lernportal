@@ -11,6 +11,13 @@ Versioning.
 - Weitere Unterrichtsthemen und Aufgaben ergänzen
 - Rückmeldungen der Schülerinnen und Schüler auswerten
 
+## [1.0.1] - 2026-06-09
+
+### Geändert
+
+- GitHub-Actions auf die aktuellen offiziellen Hauptversionen aktualisiert
+- Bevorstehende Node-20-Abkündigung in der Deployment-Pipeline behoben
+
 ## [1.0.0] - 2026-06-09
 
 ### Hinzugefügt

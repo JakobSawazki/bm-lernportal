@@ -7,7 +7,7 @@ spaeter online gestellt werden.
 
 ## Aktueller Stand
 
-- Release `1.0.0` ist vollständig entwickelt und getestet.
+- Release `1.0.1` ist vollständig entwickelt und getestet.
 - Der produktive Webcode liegt in `website/`.
 - GitHub-Remote: `JakobSawazki/bm-lernportal`
 - Veröffentlichung: GitHub Pages über GitHub Actions
