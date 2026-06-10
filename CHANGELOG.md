@@ -11,6 +11,28 @@ Versioning.
 - Weitere Unterrichtsthemen und Aufgaben ergänzen
 - Rückmeldungen der Schülerinnen und Schüler auswerten
 
+## [1.1.0] - 2026-06-10
+
+### Hinzugefügt
+
+- Versionierte Lernstand-Dateien mit Speicherdatum und stabilem JSON-Format
+- Desktop als vorgeschlagener Speicherort in unterstützten Browsern
+- Verständlicher Fallback auf den Download-Ordner in älteren Browsern
+- Drei KI-generierte, lokal optimierte Praxisfotos für Lernen, Lagerlogistik
+  und Tabellenkalkulation
+- Responsive Bildstrecke mit Alternativtexten und Offline-Verfügbarkeit
+- Feedback-Dialog mit Bewertung, Themenauswahl und vorbereiteter E-Mail an die
+  Lehrkraft
+
+### Geändert
+
+- Import prüft Lernstand-Dateien strenger und bleibt mit bisherigen Exporten kompatibel
+- Unbekannte oder doppelte Fortschrittsdaten werden beim Laden bereinigt
+- Lokale `tasks.txt` wird nicht in Git aufgenommen; der Abarbeitungsprozess ist
+  in `AGENTS.md` festgehalten
+- Offline-Cache auf Version 3 erhöht
+- BM Lernportal auf der Sawazki-Electronics-Hauptseite als Projekt verlinkt
+
 ## [1.0.1] - 2026-06-09
 
 ### Geändert

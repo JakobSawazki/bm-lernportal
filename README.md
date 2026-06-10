@@ -12,8 +12,8 @@ ein lokales Punktesystem.
 
 | Merkmal | Stand |
 | --- | --- |
-| Release | `1.0.1` |
-| Stichtag | 9. Juni 2026 |
+| Release | `1.1.0` |
+| Stichtag | 10. Juni 2026 |
 | Projektphase | Erste produktive Fassung |
 | Website-Quellcode | Vollständig in `website/` |
 | Git-Repository | `JakobSawazki/bm-lernportal` |
@@ -36,8 +36,8 @@ Am 9. Juni 2026 wurden folgende Quellen geprueft:
 - ChatGPT-Projekt:
   <https://chatgpt.com/g/g-p-688cd1dcfcb08191a08c77f1a3374e2a-bm/project>
 - GitHub-Konto: `JakobSawazki`
-- Lokaler Ausgangsordner: `C:\Users\Jakob\Documents\BM`
-- Zielablage: `D:\Google Drive\Lehramt\Lernfelder\BM`
+- Historischer Ausgangsordner: `C:\Users\Jakob\Documents\BM`
+- Aktuelle Arbeitsablage: `G:\Meine Ablage\Lehramt\Lernfelder\BM`
 
 Verwendete fachliche Themen:
 
@@ -96,7 +96,10 @@ BM/
 - 7 freischaltbare Abzeichen
 - zufälliger Prüfungs-Sprint mit 10 Aufgaben
 - automatische Fehlerliste
-- Export, Import und Löschen des lokalen Lernstands
+- Versionierter Datei-Export und -Import des lokalen Lernstands
+- Desktop als vorgeschlagener Speicherort, mit Download-Fallback
+- Responsive Praxisfotos zu Teamarbeit, Lagerlogistik und Tabellenkalkulation
+- Feedback per vorbereitetem E-Mail-Entwurf an die Lehrkraft
 - installierbare Web-App mit einfachem Offline-Cache
 
 ## Versionierung
@@ -109,7 +112,7 @@ Das Projekt verwendet semantische Versionsnummern:
 - Minor-Version: Rueckwaertskompatible neue Inhalte oder Funktionen
 - Major-Version: Grundlegende, nicht kompatible Neuausrichtung
 
-Aktueller Stand: `1.0.1`
+Aktueller Stand: `1.1.0`
 
 ## Lokal starten
 

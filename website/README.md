@@ -38,5 +38,12 @@ website/
 
 Die App besitzt kein Backend, kein Tracking und keine Anmeldung. Lernstände
 werden ausschließlich im verwendeten Browser gespeichert. Über die
-Einstellungen können sie exportiert, importiert oder gelöscht werden.
+Einstellungen können sie als versionierte JSON-Datei gespeichert, wieder
+geladen oder gelöscht werden. Unterstützte Browser öffnen dafür einen
+Dateidialog mit dem Desktop als vorgeschlagenem Speicherort; ältere Browser
+verwenden den normalen Download-Ordner.
 
+Die Startseite verwendet drei lokal gespeicherte und für das Web optimierte
+Praxisfotos. Über den Feedback-Dialog können Lernende Bewertung, Thema und
+Freitext in eine vorbereitete E-Mail an die Lehrkraft übernehmen. Die Website
+selbst speichert oder versendet diese Angaben nicht.

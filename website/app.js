@@ -2,11 +2,15 @@
   "use strict";
 
   const STORAGE_KEY = "bm-lernportal-progress-v1";
+  const EXPORT_FORMAT = "bm-lernportal-progress";
+  const EXPORT_VERSION = 1;
+  const FEEDBACK_EMAIL = "jakob.sawazki@googlemail.com";
   const POINTS_PER_LEVEL = 200;
   const content = window.BM_CONTENT;
   const app = document.getElementById("app");
   const welcomeModal = document.getElementById("welcome-modal");
   const settingsModal = document.getElementById("settings-modal");
+  const feedbackModal = document.getElementById("feedback-modal");
   const toastRegion = document.getElementById("toast-region");
 
   const defaultState = {
@@ -26,22 +30,50 @@
 
   function normalizeState(value) {
     const candidate = value && typeof value === "object" ? value : {};
+    const answered =
+      candidate.answered && typeof candidate.answered === "object" && !Array.isArray(candidate.answered)
+        ? Object.fromEntries(
+            Object.entries(candidate.answered)
+              .filter(
+                ([id, entry]) =>
+                  questionById(id) &&
+                  entry &&
+                  typeof entry === "object" &&
+                  entry.correct === true
+              )
+              .map(([id, entry]) => [
+                id,
+                {
+                  correct: true,
+                  solvedAt: typeof entry.solvedAt === "string" ? entry.solvedAt : ""
+                }
+              ])
+          )
+        : {};
     return {
       ...defaultState,
-      ...candidate,
       name: typeof candidate.name === "string" ? candidate.name.slice(0, 24) : "",
-      xp: Number.isFinite(Number(candidate.xp)) ? Math.max(0, Number(candidate.xp)) : 0,
-      answered:
-        candidate.answered && typeof candidate.answered === "object" && !Array.isArray(candidate.answered)
-          ? candidate.answered
-          : {},
-      mistakes: Array.isArray(candidate.mistakes) ? candidate.mistakes.filter(questionById) : [],
-      unlockedBadges: Array.isArray(candidate.unlockedBadges)
-        ? candidate.unlockedBadges.filter((id) => content.badges.some((badge) => badge.id === id))
+      xp: Number.isFinite(Number(candidate.xp)) ? Math.max(0, Math.floor(Number(candidate.xp))) : 0,
+      answered,
+      mistakes: Array.isArray(candidate.mistakes)
+        ? [...new Set(candidate.mistakes.filter(questionById))]
         : [],
-      streak: Number.isFinite(Number(candidate.streak)) ? Math.max(0, Number(candidate.streak)) : 0,
+      unlockedBadges: Array.isArray(candidate.unlockedBadges)
+        ? [
+            ...new Set(
+              candidate.unlockedBadges.filter((id) =>
+                content.badges.some((badge) => badge.id === id)
+              )
+            )
+          ]
+        : [],
+      streak: Number.isFinite(Number(candidate.streak))
+        ? Math.max(0, Math.floor(Number(candidate.streak)))
+        : 0,
       lastStudyDate: typeof candidate.lastStudyDate === "string" ? candidate.lastStudyDate : "",
-      sprints: Number.isFinite(Number(candidate.sprints)) ? Math.max(0, Number(candidate.sprints)) : 0
+      sprints: Number.isFinite(Number(candidate.sprints))
+        ? Math.max(0, Math.floor(Number(candidate.sprints)))
+        : 0
     };
   }
 
@@ -197,6 +229,63 @@
         </div>
       </section>
 
+      <section class="page-shell section-block learning-scenes" aria-labelledby="learning-scenes-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Nah an der Praxis</p>
+            <h2 id="learning-scenes-title">Aus Aufgaben wird Handlungssicherheit.</h2>
+          </div>
+          <p class="section-copy">
+            Rechnen, entscheiden und erklären: genau die Situationen, die dir
+            in Schule, Betrieb und Prüfung begegnen.
+          </p>
+        </div>
+        <div class="scene-grid">
+          <figure class="scene-card scene-card-featured">
+            <img
+              src="assets/lernen-im-team.webp"
+              alt="Drei Auszubildende bearbeiten gemeinsam eine kaufmännische Aufgabe."
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              <span>Gemeinsam lernen</span>
+              <strong>Gedanken erklären, Lösungen vergleichen.</strong>
+            </figcaption>
+          </figure>
+          <figure class="scene-card">
+            <img
+              src="assets/lagerlogistik.webp"
+              alt="Zwei Auszubildende besprechen Bestände in einem Lager."
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              <span>Lagerlogistik</span>
+              <strong>Kosten und Kapazitäten im Blick behalten.</strong>
+            </figcaption>
+          </figure>
+          <figure class="scene-card">
+            <img
+              src="assets/tabellenkalkulation.webp"
+              alt="Zwei Auszubildende prüfen gemeinsam Zahlen in einer Tabellenkalkulation."
+              width="1200"
+              height="800"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>
+              <span>Tabellenkalkulation</span>
+              <strong>Zahlen verstehen statt nur eingeben.</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="page-shell focus-grid section-block">
         <article class="focus-card dark-card">
           <div>
@@ -215,6 +304,18 @@
           </div>
           <button class="secondary-button" data-action="mistakes">Fehlertraining öffnen</button>
         </article>
+      </section>
+
+      <section class="page-shell section-block feedback-invite">
+        <div>
+          <p class="eyebrow light">Mitgestalten</p>
+          <h2>Dein Feedback macht das Portal besser.</h2>
+          <p>
+            Sag uns, welche Aufgaben dir helfen, was noch unklar ist oder
+            welches Thema als Nächstes dazukommen sollte.
+          </p>
+        </div>
+        <button class="light-button" data-action="feedback">Feedback geben</button>
       </section>
     `;
 
@@ -702,6 +803,7 @@
         if (action === "sprint") startSprint();
         if (action === "mistakes") navigate("mistakes");
         if (action === "dashboard") navigate("dashboard");
+        if (action === "feedback") openFeedback();
         if (action === "practice-module") {
           const module = moduleById(button.dataset.module);
           const ids = content.questions
@@ -731,13 +833,119 @@
     settingsModal.hidden = true;
   }
 
-  function exportProgress() {
-    const blob = new Blob([JSON.stringify(state, null, 2)], { type: "application/json" });
+  function openFeedback() {
+    feedbackModal.hidden = false;
+    document.getElementById("feedback-message").focus();
+  }
+
+  function closeFeedback() {
+    feedbackModal.hidden = true;
+  }
+
+  function sendFeedback(event) {
+    event.preventDefault();
+    const rating = document.getElementById("feedback-rating").value;
+    const topic = document.getElementById("feedback-topic").value;
+    const message = document.getElementById("feedback-message").value.trim();
+    if (!message) return;
+
+    const subject = `Feedback zum BM Lernportal: ${topic}`;
+    const body = [
+      "Hallo Herr Sawazki,",
+      "",
+      "ich möchte Feedback zum BM Lernportal geben.",
+      "",
+      `Bewertung: ${rating}`,
+      `Bereich: ${topic}`,
+      "",
+      "Feedback:",
+      message,
+      "",
+      "---",
+      "Diese E-Mail wurde über die Feedback-Funktion des BM Lernportals vorbereitet."
+    ].join("\n");
+
+    closeFeedback();
+    showToast("Dein E-Mail-Programm wird geöffnet.");
+    window.location.href =
+      `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(body)}`;
+  }
+
+  function createProgressExport() {
+    return {
+      format: EXPORT_FORMAT,
+      version: EXPORT_VERSION,
+      exportedAt: new Date().toISOString(),
+      progress: state
+    };
+  }
+
+  function downloadProgressFile(contents, fileName) {
+    const blob = new Blob([contents], { type: "application/json" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = `bm-lernstand-${new Date().toISOString().slice(0, 10)}.json`;
+    link.download = fileName;
+    link.hidden = true;
+    document.body.appendChild(link);
     link.click();
-    URL.revokeObjectURL(link.href);
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(link.href), 0);
+  }
+
+  async function exportProgress() {
+    const fileName = `bm-lernstand-${new Date().toISOString().slice(0, 10)}.json`;
+    const contents = JSON.stringify(createProgressExport(), null, 2);
+
+    if ("showSaveFilePicker" in window) {
+      try {
+        const handle = await window.showSaveFilePicker({
+          suggestedName: fileName,
+          startIn: "desktop",
+          types: [
+            {
+              description: "BM-Lernstand",
+              accept: { "application/json": [".json"] }
+            }
+          ]
+        });
+        const writable = await handle.createWritable();
+        await writable.write(contents);
+        await writable.close();
+        showToast("Lernstand-Datei wurde gespeichert.");
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
+    }
+
+    downloadProgressFile(contents, fileName);
+    showToast("Lernstand-Datei wurde heruntergeladen.");
+  }
+
+  function extractImportedProgress(value) {
+    if (!value || typeof value !== "object" || Array.isArray(value)) {
+      throw new Error("Ungültiges Dateiformat");
+    }
+
+    if ("format" in value || "version" in value || "progress" in value) {
+      if (
+        value.format !== EXPORT_FORMAT ||
+        value.version !== EXPORT_VERSION ||
+        !value.progress ||
+        typeof value.progress !== "object" ||
+        Array.isArray(value.progress)
+      ) {
+        throw new Error("Nicht unterstützte Lernstand-Datei");
+      }
+      return value.progress;
+    }
+
+    const knownKeys = Object.keys(defaultState);
+    if (!knownKeys.some((key) => key in value)) {
+      throw new Error("Keine Lernstandsdaten gefunden");
+    }
+    return value;
   }
 
   function importProgress(event) {
@@ -746,14 +954,14 @@
     const reader = new FileReader();
     reader.addEventListener("load", () => {
       try {
-        const imported = JSON.parse(reader.result);
-        state = normalizeState(imported);
+        const imported = JSON.parse(String(reader.result));
+        state = normalizeState(extractImportedProgress(imported));
         saveState();
         closeSettings();
         navigate("dashboard");
-        showToast("Lernstand wurde importiert.");
+        showToast("Lernstand-Datei wurde geladen.");
       } catch (error) {
-        showToast("Die Datei konnte nicht gelesen werden.");
+        showToast("Die Lernstand-Datei ist ungültig oder nicht unterstützt.");
       }
     });
     reader.readAsText(file);
@@ -776,6 +984,8 @@
 
   document.getElementById("profile-button").addEventListener("click", openSettings);
   document.getElementById("settings-close").addEventListener("click", closeSettings);
+  document.getElementById("feedback-close").addEventListener("click", closeFeedback);
+  document.getElementById("feedback-form").addEventListener("submit", sendFeedback);
   document.getElementById("save-name").addEventListener("click", () => {
     const value = document.getElementById("settings-name").value.trim();
     state.name = value || "Azubi";
@@ -811,8 +1021,13 @@
     if (event.target === settingsModal) closeSettings();
   });
 
+  feedbackModal.addEventListener("click", (event) => {
+    if (event.target === feedbackModal) closeFeedback();
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !settingsModal.hidden) closeSettings();
+    if (event.key === "Escape" && !feedbackModal.hidden) closeFeedback();
   });
 
   if ("serviceWorker" in navigator && location.protocol !== "file:") {

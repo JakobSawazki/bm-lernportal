@@ -474,6 +474,80 @@ h1 em {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.section-copy {
+  max-width: 430px;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.scene-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-rows: repeat(2, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.scene-card {
+  position: relative;
+  min-height: 250px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--forest);
+  border-radius: var(--radius-medium) var(--radius-medium) var(--radius-medium) 8px;
+  box-shadow: var(--shadow);
+}
+
+.scene-card-featured {
+  grid-row: 1 / 3;
+  min-height: 520px;
+}
+
+.scene-card::after {
+  position: absolute;
+  inset: 38% 0 0;
+  content: "";
+  background: linear-gradient(transparent, rgba(8, 29, 24, 0.9));
+}
+
+.scene-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.scene-card:hover img {
+  transform: scale(1.025);
+}
+
+.scene-card figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: grid;
+  gap: 4px;
+  padding: clamp(22px, 4vw, 36px);
+  color: white;
+}
+
+.scene-card figcaption span {
+  color: #d8ed8f;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.scene-card figcaption strong {
+  max-width: 440px;
+  font-family: Georgia, serif;
+  font-size: clamp(1.35rem, 2.2vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
 .module-card {
   display: flex;
   flex-direction: column;
@@ -630,6 +704,36 @@ h1 em {
   background: var(--coral);
   border-radius: 50%;
   font-size: 2rem;
+}
+
+.feedback-invite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: clamp(32px, 6vw, 64px);
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 84% 10%, rgba(216, 237, 143, 0.2), transparent 16rem),
+    var(--forest);
+  border-radius: var(--radius-large) var(--radius-large) var(--radius-large) 10px;
+}
+
+.feedback-invite h2 {
+  max-width: 680px;
+  margin-bottom: 12px;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  line-height: 0.98;
+}
+
+.feedback-invite p:last-child {
+  max-width: 680px;
+  margin-bottom: 0;
+  color: #c7dbd3;
+}
+
+.feedback-invite .light-button {
+  flex: 0 0 auto;
 }
 
 .page-intro {
@@ -1183,7 +1287,8 @@ h1 em {
 }
 
 .welcome-card,
-.settings-card {
+.settings-card,
+.feedback-card {
   position: relative;
   width: min(510px, 100%);
   max-height: calc(100vh - 40px);
@@ -1195,32 +1300,69 @@ h1 em {
 }
 
 .welcome-card h1,
-.settings-card h2 {
+.settings-card h2,
+.feedback-card h2 {
   margin-bottom: 14px;
   font-size: clamp(2.5rem, 7vw, 4rem);
   line-height: 0.98;
 }
 
 .welcome-card > p:not(.eyebrow),
-.settings-card > p:not(.eyebrow) {
+.settings-card > p:not(.eyebrow),
+.feedback-card > p:not(.eyebrow) {
   color: var(--ink-soft);
 }
 
 .welcome-card label,
-.settings-card label:not(.file-button) {
+.settings-card label:not(.file-button),
+.feedback-card label {
   display: block;
   margin: 24px 0 8px;
   font-weight: 800;
 }
 
 .welcome-card input,
-.settings-card input {
+.settings-card input,
+.feedback-card select,
+.feedback-card textarea {
   width: 100%;
   min-height: 52px;
   padding: 10px 14px;
   background: white;
   border: 1px solid var(--line);
   border-radius: 12px;
+}
+
+.feedback-card {
+  width: min(610px, 100%);
+}
+
+.feedback-form {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.feedback-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.feedback-card label {
+  margin: 0;
+}
+
+.feedback-card select,
+.feedback-card textarea {
+  display: block;
+  margin-top: 8px;
+  font: inherit;
+}
+
+.feedback-card textarea {
+  min-height: 150px;
+  resize: vertical;
 }
 
 .welcome-card .primary-button {
@@ -1332,6 +1474,17 @@ h1 em {
   gap: 9px;
 }
 
+.settings-help {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
 .file-button {
   display: grid;
   place-items: center;
@@ -1339,7 +1492,7 @@ h1 em {
 }
 
 .privacy-note {
-  margin: 20px 0 0;
+  margin: 12px 0 0;
   font-size: 0.78rem;
 }
 
@@ -1409,6 +1562,17 @@ h1 em {
   .module-grid.compact,
   .module-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scene-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .scene-card-featured {
+    grid-row: auto;
+    grid-column: 1 / -1;
+    min-height: 420px;
   }
 
   .lesson-layout {
@@ -1526,6 +1690,16 @@ h1 em {
     flex-direction: column;
   }
 
+  .scene-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scene-card,
+  .scene-card-featured {
+    grid-column: auto;
+    min-height: 300px;
+  }
+
   .module-grid.compact,
   .module-grid,
   .focus-grid,
@@ -1541,6 +1715,19 @@ h1 em {
   .focus-card {
     min-height: 350px;
     padding: 30px;
+  }
+
+  .feedback-invite {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .feedback-invite .light-button {
+    width: 100%;
+  }
+
+  .feedback-field-row {
+    grid-template-columns: 1fr;
   }
 
   .overall-progress {
@@ -1650,4 +1837,3 @@ h1 em {
     animation-duration: 0.01ms !important;
   }
 }
-

@@ -104,13 +104,78 @@
         </div>
         <div class="settings-stats" id="settings-stats"></div>
         <div class="settings-actions">
-          <button class="secondary-button" id="export-progress" type="button">Lernstand exportieren</button>
-          <label class="secondary-button file-button" for="import-progress">Lernstand importieren</label>
-          <input id="import-progress" type="file" accept="application/json" hidden>
+          <button class="secondary-button" id="export-progress" type="button">
+            Lernstand-Datei speichern
+          </button>
+          <label class="secondary-button file-button" for="import-progress">
+            Lernstand-Datei laden
+          </label>
+          <input id="import-progress" type="file" accept=".json,application/json" hidden>
           <button class="danger-button" id="reset-progress" type="button">Lernstand löschen</button>
         </div>
+        <p class="settings-help">
+          Beim Speichern öffnet sich ein Dateidialog mit dem Desktop als
+          vorgeschlagenem Speicherort. In älteren Browsern landet die Datei im
+          Download-Ordner.
+        </p>
         <p class="privacy-note">
           Es werden keine Daten übertragen. Alles bleibt lokal in deinem Browser.
+        </p>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="feedback-modal" hidden>
+      <section class="feedback-card" role="dialog" aria-modal="true" aria-labelledby="feedback-title">
+        <button
+          class="modal-close"
+          id="feedback-close"
+          type="button"
+          aria-label="Feedback schließen"
+        >
+          ×
+        </button>
+        <p class="eyebrow">Deine Meinung zählt</p>
+        <h2 id="feedback-title">Was können wir besser machen?</h2>
+        <form class="feedback-form" id="feedback-form">
+          <div class="feedback-field-row">
+            <label for="feedback-rating">
+              Wie hilfreich ist das Portal?
+              <select id="feedback-rating" required>
+                <option value="5 - sehr hilfreich">5 – sehr hilfreich</option>
+                <option value="4 - hilfreich">4 – hilfreich</option>
+                <option value="3 - teils/teils">3 – teils/teils</option>
+                <option value="2 - wenig hilfreich">2 – wenig hilfreich</option>
+                <option value="1 - nicht hilfreich">1 – nicht hilfreich</option>
+              </select>
+            </label>
+            <label for="feedback-topic">
+              Worum geht es?
+              <select id="feedback-topic" required>
+                <option value="Allgemeiner Eindruck">Allgemeiner Eindruck</option>
+                <option value="Aufgaben und Lösungen">Aufgaben und Lösungen</option>
+                <option value="Bedienung und Darstellung">Bedienung und Darstellung</option>
+                <option value="Technisches Problem">Technisches Problem</option>
+                <option value="Idee für neue Inhalte">Idee für neue Inhalte</option>
+              </select>
+            </label>
+          </div>
+          <label for="feedback-message">
+            Dein Feedback
+            <textarea
+              id="feedback-message"
+              maxlength="800"
+              required
+              placeholder="Was gefällt dir? Was fehlt dir? Wo bist du hängen geblieben?"
+            ></textarea>
+          </label>
+          <button class="primary-button full-width" type="submit">
+            Feedback per E-Mail senden
+          </button>
+        </form>
+        <p class="privacy-note">
+          Die Website speichert dein Feedback nicht. Beim Senden öffnet sich
+          dein E-Mail-Programm mit einer vorbereiteten Nachricht an die
+          Lehrkraft.
         </p>
       </section>
     </div>

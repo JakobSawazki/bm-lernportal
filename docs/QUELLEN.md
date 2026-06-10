@@ -11,9 +11,10 @@ uebernommen wurden.
 - Bezeichnung: `BM`
 - URL:
   <https://chatgpt.com/g/g-p-688cd1dcfcb08191a08c77f1a3374e2a-bm/project>
-- Pruefdatum: 9. Juni 2026
+- Pruefdatum: 10. Juni 2026
 - Ergebnis: Nach Anmeldung wurden die fachlich relevanten Unterhaltungen
   ausgewertet
+- Projektquellen: `L 2024-2025.pdf`, `2024-2025.pdf` und `Anlagen.zip`
 - Verwendete Themen:
   - Eigen- und Fremdlagerung
   - kritische Lagerfläche
@@ -24,9 +25,10 @@ uebernommen wurden.
 ### GitHub
 
 - Konto: `JakobSawazki`
-- Pruefdatum: 9. Juni 2026
-- Ergebnis: Es existierte kein eindeutig zuordenbares BM-Repository
-- Entscheidung: Neues Repository `JakobSawazki/bm-lernportal`
+- Pruefdatum: 10. Juni 2026
+- Ergebnis: Repository `JakobSawazki/bm-lernportal` ist vorhanden und
+  GitHub Pages wurde erfolgreich veröffentlicht
+- Produktive URL: `https://jakobsawazki.github.io/bm-lernportal/`
 
 ### Lokaler Ausgangsordner
 
@@ -36,9 +38,9 @@ uebernommen wurden.
 
 ### Zielablage
 
-- Pfad: `D:\Google Drive\Lehramt\Lernfelder\BM`
-- Angelegt: 9. Juni 2026
-- Rolle: Kuenftige zentrale Arbeits- und Dokumentationsablage
+- Pfad: `G:\Meine Ablage\Lehramt\Lernfelder\BM`
+- Bestaetigt: 10. Juni 2026
+- Rolle: Zentrale Arbeits- und Dokumentationsablage
 
 ### OneNote und SharePoint
 
@@ -46,11 +48,26 @@ uebernommen wurden.
   `https://ksnagold.sharepoint.com/:o:/s/25-26-W1BMDVSZ/...`
 - Prüfungsbereich:
   `https://ksnagold-my.sharepoint.com/personal/jakob_sawazki_ks-nagold_de/...`
-- Ergebnis: Die Quellen erfordern eine separate Microsoft-Anmeldung.
+- Prüfdatum: 10. Juni 2026
+- Ergebnis: Nach Microsoft-Anmeldung wurde die BM-Ergebnissicherung mit
+  Verweisen auf Prüfungen und Anlagen für 2024, 2024-2025 und 2025
+  eingesehen.
+- Abgrenzung: Die Originaldateien wurden nicht in das Repository übernommen.
 - Veröffentlichungsregel: Keine Originalprüfungen, privaten Notizen oder
   personenbezogenen Inhalte in das öffentliche Repository übernehmen.
 - Erste Fassung: Verwendet eigenständig formulierte Aufgaben auf Basis der
   bestätigten Themenfelder.
+
+### KI-generierte Bildassets
+
+- Erstellungsdatum: 10. Juni 2026
+- Werkzeug: integrierte OpenAI-Bildgenerierung
+- Dateien:
+  - `website/assets/lernen-im-team.webp`
+  - `website/assets/lagerlogistik.webp`
+  - `website/assets/tabellenkalkulation.webp`
+- Verwendung: ausschließlich als lokale Praxisbilder auf der Startseite
+- Nachbearbeitung: auf 1200 × 800 Pixel verkleinert und als WebP komprimiert
 
 ## Importprotokoll
 

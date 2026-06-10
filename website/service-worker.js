@@ -1,4 +1,4 @@
-const CACHE_NAME = "bm-lernportal-v1";
+const CACHE_NAME = "bm-lernportal-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -6,7 +6,10 @@ const APP_SHELL = [
   "./content.js",
   "./app.js",
   "./icon.svg",
-  "./manifest.webmanifest"
+  "./manifest.webmanifest",
+  "./assets/lernen-im-team.webp",
+  "./assets/lagerlogistik.webp",
+  "./assets/tabellenkalkulation.webp"
 ];
 
 self.addEventListener("install", (event) => {

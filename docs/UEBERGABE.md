@@ -7,11 +7,14 @@ spaeter online gestellt werden.
 
 ## Aktueller Stand
 
-- Release `1.0.1` ist vollständig entwickelt und getestet.
+- Release `1.1.0` ist vollständig entwickelt und getestet.
 - Der produktive Webcode liegt in `website/`.
 - GitHub-Remote: `JakobSawazki/bm-lernportal`
 - Veröffentlichung: GitHub Pages über GitHub Actions
-- Lernstand wird ausschließlich lokal im Browser gespeichert.
+- Lernstand wird ausschließlich lokal im Browser gespeichert und kann als
+  versionierte JSON-Datei gesichert und wieder geladen werden.
+- Zentrale Arbeitsablage:
+  `G:\Meine Ablage\Lehramt\Lernfelder\BM`
 
 ## Wichtigste naechste Schritte
 
@@ -25,6 +28,8 @@ spaeter online gestellt werden.
 
 - Keine Zugangsdaten in Dateien oder Git-Commits speichern.
 - Keine privaten Prüfungen oder personenbezogenen Inhalte veröffentlichen.
+- Lokale Aufgaben aus `tasks.txt` von oben nach unten bearbeiten und nur
+  vollständig erledigte Aufgabenblöcke entfernen.
 - Neue Quellen in `QUELLEN.md` protokollieren.
 - Wesentliche Entscheidungen in `ENTSCHEIDUNGEN.md` festhalten.
 - Abgeschlossene Änderungen in `CHANGELOG.md` dokumentieren.

@@ -8,8 +8,8 @@ vorbereitet.
 
 ## Aktueller Versionsstand
 
-- Version: `1.0.1`
-- Datum: 9. Juni 2026
+- Version: `1.1.0`
+- Release-Datum: 10. Juni 2026
 - Branch: `main`
 - Remote: `https://github.com/JakobSawazki/bm-lernportal.git`
 - Deployment: GitHub Actions und GitHub Pages
@@ -22,6 +22,10 @@ vorbereitet.
 - Neues Lernkonzept und Informationsarchitektur entwickelt
 - 40 Aufgaben in fünf Lernfeldern erstellt
 - Gamification und lokale Lernstandsspeicherung umgesetzt
+- Versionierten Datei-Export und -Import mit Desktop-Vorauswahl umgesetzt
+- Responsive Praxisbildstrecke mit drei lokalen WebP-Assets ergänzt
+- Datensparsame Feedback-Funktion über das E-Mail-Programm umgesetzt
+- Verlinkung auf der Sawazki-Electronics-Hauptseite vorbereitet
 - Responsive Gestaltung für Desktop und Smartphone erstellt
 - Offline-Cache und Web-App-Manifest ergänzt
 - Automatisierte und manuelle Tests durchgeführt
@@ -29,14 +33,14 @@ vorbereitet.
 
 ## Naechster pruefbarer Meilenstein
 
-**M2 - Inhaltserweiterung**
+**M3 - Inhaltserweiterung**
 
 Abnahmekriterien:
 
 - Rückmeldungen aus dem Unterricht sind priorisiert.
 - Neue fachlich geprüfte Aufgabensätze sind ergänzt.
 - Bestehende Lernstände bleiben kompatibel.
-- Release `1.1.0` ist getestet und dokumentiert.
+- Release `1.2.0` ist getestet und dokumentiert.
 
 ## Risiken
 
