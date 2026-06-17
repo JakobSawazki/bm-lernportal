@@ -29,6 +29,7 @@
         <button class="nav-link is-active" data-view="dashboard">Start</button>
         <button class="nav-link" data-view="modules">Lernfelder</button>
         <button class="nav-link" data-view="mistakes">Fehlertraining</button>
+        <button class="nav-link" data-view="glossary">Glossar</button>
         <button class="nav-link" data-view="achievements">Erfolge</button>
       </nav>
 
@@ -61,8 +62,12 @@
         <span aria-hidden="true">03</span>
         Fehler
       </button>
-      <button class="mobile-link" data-view="achievements">
+      <button class="mobile-link" data-view="glossary">
         <span aria-hidden="true">04</span>
+        Glossar
+      </button>
+      <button class="mobile-link" data-view="achievements">
+        <span aria-hidden="true">05</span>
         Erfolge
       </button>
     </nav>
@@ -107,16 +112,30 @@
           <button class="secondary-button" id="export-progress" type="button">
             Lernstand-Datei speichern
           </button>
+          <button class="secondary-button" id="copy-progress" type="button">
+            Lernstand-JSON kopieren
+          </button>
           <label class="secondary-button file-button" for="import-progress">
             Lernstand-Datei laden
           </label>
           <input id="import-progress" type="file" accept=".json,application/json" hidden>
           <button class="danger-button" id="reset-progress" type="button">Lernstand löschen</button>
         </div>
+        <div class="copy-fallback" id="progress-copy-fallback" hidden>
+          <p>
+            Falls Speichern oder Zwischenablage am Schüler-PC blockiert ist:
+            Inhalt markieren, in den Windows-Editor einfügen und als
+            <strong>bm-lernstand.json</strong> auf dem Desktop speichern.
+          </p>
+          <textarea id="progress-json" readonly rows="7" aria-label="Lernstand als JSON"></textarea>
+          <button class="secondary-button full-width" id="select-progress-json" type="button">
+            JSON markieren
+          </button>
+        </div>
         <p class="settings-help">
-          Beim Speichern öffnet sich ein Dateidialog mit dem Desktop als
-          vorgeschlagenem Speicherort. In älteren Browsern landet die Datei im
-          Download-Ordner.
+          Direktes Schreiben auf den Desktop darf eine Website nicht erzwingen.
+          Unterstützte Browser schlagen den Desktop vor. Wenn der Schüler-PC das
+          blockiert, hilft die JSON-Kopie als sichere Notlösung.
         </p>
         <p class="privacy-note">
           Es werden keine Daten übertragen. Alles bleibt lokal in deinem Browser.

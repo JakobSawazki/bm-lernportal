@@ -93,6 +93,28 @@ nachvollziehbar dokumentiert.
 - Begründung: Die Homepage erhält einen stärkeren Praxisbezug, ohne externe
   Bilddienste, Nachladen von Drittanbietern oder fremde Stockfoto-Lizenzen.
 
+## E-011 - Glossar als eigener Lernbereich
+
+- Datum: 17. Juni 2026
+- Status: angenommen
+- Entscheidung: Wichtige Begriffe aus dem Ausbildungsberuf Kaufmann/Kauffrau
+  für Büromanagement werden in einem eigenen Navigationsbereich mit
+  Kurzdefinition, Detailerklärung, Beispiel und Mini-Quiz angeboten.
+- Begründung: Fachbegriffe tauchen lernfeldübergreifend auf. Ein Glossar gibt
+  Schülerinnen und Schülern eine schnelle Orientierung, ohne den Übungsfluss der
+  Lernfelder zu überladen.
+
+## E-012 - JSON-Kopie als Sicherungsfallback
+
+- Datum: 17. Juni 2026
+- Status: angenommen
+- Entscheidung: Neben Datei-Export und Import wird der Lernstand als
+  markierbarer JSON-Text bereitgestellt, wenn Datei- oder Clipboard-Funktionen
+  auf verwalteten Schüler-PCs blockiert werden.
+- Begründung: Eine statische Website darf nicht ohne Dateidialog direkt auf den
+  Desktop schreiben. Die JSON-Kopie erhält trotzdem ein portables, wieder
+  importierbares Format.
+
 ## Offene Entscheidungen
 
 - Optionale eigene Domain

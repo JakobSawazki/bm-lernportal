@@ -18,6 +18,7 @@ Anschließend ist die App unter `http://localhost:4173` erreichbar.
 - Eigenes responsives CSS
 - Vanilla JavaScript ohne externe Bibliotheken
 - `localStorage` für Name, XP, Lernfortschritt und Fehlerliste
+- Glossar mit Detailseiten und Mini-Quiz
 - Service Worker für eine einfache Offline-Nutzung
 - GitHub Pages als Hostingziel
 
@@ -41,7 +42,9 @@ werden ausschließlich im verwendeten Browser gespeichert. Über die
 Einstellungen können sie als versionierte JSON-Datei gespeichert, wieder
 geladen oder gelöscht werden. Unterstützte Browser öffnen dafür einen
 Dateidialog mit dem Desktop als vorgeschlagenem Speicherort; ältere Browser
-verwenden den normalen Download-Ordner.
+verwenden den normalen Download-Ordner. Wenn Speichern oder Zwischenablage auf
+einem verwalteten Schüler-PC blockiert werden, kann derselbe Lernstand als JSON
+angezeigt, markiert und manuell als Datei gespeichert werden.
 
 Die Startseite verwendet drei lokal gespeicherte und für das Web optimierte
 Praxisfotos. Über den Feedback-Dialog können Lernende Bewertung, Thema und

@@ -118,6 +118,10 @@
     return content.modules.find((module) => module.id === id);
   }
 
+  function glossaryById(id) {
+    return content.glossary.find((entry) => entry.id === id);
+  }
+
   function moduleProgress(moduleId) {
     const questions = content.questions.filter((question) => question.module === moduleId);
     const solved = questions.filter((question) => state.answered[question.id]?.correct).length;
@@ -159,11 +163,13 @@
   function navigate(view, options = {}) {
     currentView = view;
     session = null;
-    setActiveNavigation(view);
+    setActiveNavigation(view === "glossary-entry" ? "glossary" : view);
 
     if (view === "dashboard") renderDashboard();
     if (view === "modules") renderModules();
     if (view === "mistakes") renderMistakes();
+    if (view === "glossary") renderGlossary();
+    if (view === "glossary-entry") renderGlossaryEntry(options.termId);
     if (view === "achievements") renderAchievements();
     if (view === "module") renderModule(options.moduleId);
 
@@ -368,6 +374,106 @@
       </section>
     `;
     bindAppActions();
+  }
+
+  function renderGlossary() {
+    const terms = [...content.glossary].sort((left, right) =>
+      left.term.localeCompare(right.term, "de")
+    );
+
+    app.innerHTML = `
+      <section class="page-shell page-intro glossary-intro">
+        <p class="eyebrow">Glossar</p>
+        <h1>Begriffe, die im Büro<br>wirklich zählen.</h1>
+        <p>
+          Kurze Erklärungen zu wichtigen Begriffen aus Büromanagement,
+          Beschaffung, Auftragsbearbeitung, Rechnungswesen, Personal und
+          Projektarbeit. Öffne einen Begriff für Beispiel und Mini-Quiz.
+        </p>
+      </section>
+      <section class="page-shell section-block">
+        <div class="glossary-grid">
+          ${terms.map((entry) => `
+            <article class="glossary-card">
+              <span class="glossary-category">${escapeHtml(entry.category)}</span>
+              <h2>${escapeHtml(entry.term)}</h2>
+              <p>${escapeHtml(entry.short)}</p>
+              <button class="card-link" data-action="open-glossary" data-term="${entry.id}">
+                Begriff öffnen <span aria-hidden="true">→</span>
+              </button>
+            </article>
+          `).join("")}
+        </div>
+      </section>
+    `;
+    bindAppActions();
+  }
+
+  function renderGlossaryEntry(termId) {
+    const entry = glossaryById(termId);
+    if (!entry) {
+      navigate("glossary");
+      return;
+    }
+
+    app.innerHTML = `
+      <section class="page-shell glossary-detail-shell">
+        <button class="back-button" data-action="glossary">← Zurück zum Glossar</button>
+        <article class="glossary-detail-card">
+          <span class="glossary-category">${escapeHtml(entry.category)}</span>
+          <h1>${escapeHtml(entry.term)}</h1>
+          <p class="glossary-lead">${escapeHtml(entry.short)}</p>
+          <div class="glossary-explanation">
+            <div>
+              <p class="eyebrow">Kurz erklärt</p>
+              <p>${escapeHtml(entry.detail)}</p>
+            </div>
+            <aside>
+              <strong>Beispiel</strong>
+              <p>${escapeHtml(entry.example)}</p>
+            </aside>
+          </div>
+        </article>
+
+        <article class="glossary-quiz-card">
+          <p class="eyebrow">Mini-Quiz</p>
+          <h2>${escapeHtml(entry.quiz.question)}</h2>
+          <form id="glossary-quiz-form">
+            <fieldset class="choice-list">
+              <legend class="sr-only">Wähle eine Antwort</legend>
+              ${entry.quiz.options.map((option, index) => `
+                <label class="choice-option">
+                  <input type="radio" name="answer" value="${index}" required>
+                  <span class="choice-letter">${String.fromCharCode(65 + index)}</span>
+                  <span>${escapeHtml(option)}</span>
+                </label>
+              `).join("")}
+            </fieldset>
+            <button class="primary-button answer-button" type="submit">Antwort prüfen</button>
+          </form>
+          <div id="glossary-feedback" class="feedback" hidden></div>
+        </article>
+      </section>
+    `;
+    bindAppActions();
+    document.getElementById("glossary-quiz-form").addEventListener("submit", (event) => {
+      checkGlossaryQuiz(event, entry);
+    });
+  }
+
+  function checkGlossaryQuiz(event, entry) {
+    event.preventDefault();
+    const selected = Number(new FormData(event.currentTarget).get("answer"));
+    const isCorrect = selected === entry.quiz.answer;
+    const feedback = document.getElementById("glossary-feedback");
+    feedback.hidden = false;
+    feedback.className = `feedback ${isCorrect ? "correct" : "incorrect"}`;
+    feedback.innerHTML = `
+      <div>
+        <strong>${isCorrect ? "Richtig." : "Fast - noch einmal genau hinschauen."}</strong>
+        <p>${escapeHtml(entry.quiz.explanation)}</p>
+      </div>
+    `;
   }
 
   function renderModule(moduleId) {
@@ -803,6 +909,8 @@
         if (action === "sprint") startSprint();
         if (action === "mistakes") navigate("mistakes");
         if (action === "dashboard") navigate("dashboard");
+        if (action === "glossary") navigate("glossary");
+        if (action === "open-glossary") navigate("glossary-entry", { termId: button.dataset.term });
         if (action === "feedback") openFeedback();
         if (action === "practice-module") {
           const module = moduleById(button.dataset.module);
@@ -825,6 +933,8 @@
       <div><strong>${totalProgress().solved}</strong><span>gelöst</span></div>
       <div><strong>${state.unlockedBadges.length}</strong><span>Abzeichen</span></div>
     `;
+    document.getElementById("progress-copy-fallback").hidden = true;
+    document.getElementById("progress-json").value = "";
     settingsModal.hidden = false;
     document.getElementById("settings-name").focus();
   }
@@ -881,6 +991,10 @@
     };
   }
 
+  function createProgressExportText() {
+    return JSON.stringify(createProgressExport(), null, 2);
+  }
+
   function downloadProgressFile(contents, fileName) {
     const blob = new Blob([contents], { type: "application/json" });
     const link = document.createElement("a");
@@ -895,7 +1009,7 @@
 
   async function exportProgress() {
     const fileName = `bm-lernstand-${new Date().toISOString().slice(0, 10)}.json`;
-    const contents = JSON.stringify(createProgressExport(), null, 2);
+    const contents = createProgressExportText();
 
     if ("showSaveFilePicker" in window) {
       try {
@@ -921,6 +1035,39 @@
 
     downloadProgressFile(contents, fileName);
     showToast("Lernstand-Datei wurde heruntergeladen.");
+  }
+
+  function showProgressJsonFallback(contents) {
+    const fallback = document.getElementById("progress-copy-fallback");
+    const textarea = document.getElementById("progress-json");
+    fallback.hidden = false;
+    textarea.value = contents;
+    textarea.focus();
+    textarea.select();
+  }
+
+  async function copyProgressToClipboard() {
+    const contents = createProgressExportText();
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(contents);
+        showToast("Lernstand-JSON wurde in die Zwischenablage kopiert.");
+        return;
+      }
+    } catch (error) {
+      // Some managed school browsers block clipboard writes; show a manual fallback below.
+    }
+
+    showProgressJsonFallback(contents);
+    showToast("Kopieren wurde blockiert. Das JSON ist zum manuellen Speichern markiert.");
+  }
+
+  function selectProgressJson() {
+    const textarea = document.getElementById("progress-json");
+    if (!textarea.value) showProgressJsonFallback(createProgressExportText());
+    textarea.focus();
+    textarea.select();
   }
 
   function extractImportedProgress(value) {
@@ -995,6 +1142,8 @@
     showToast("Name gespeichert.");
   });
   document.getElementById("export-progress").addEventListener("click", exportProgress);
+  document.getElementById("copy-progress").addEventListener("click", copyProgressToClipboard);
+  document.getElementById("select-progress-json").addEventListener("click", selectProgressJson);
   document.getElementById("import-progress").addEventListener("change", importProgress);
   document.getElementById("reset-progress").addEventListener("click", resetProgress);
 

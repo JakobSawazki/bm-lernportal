@@ -73,7 +73,9 @@ Ergebnis: Oeffentlich erreichbare, dokumentierte Homepage.
 
 ## Nächste Ausbaustufe
 
+- Weitere geprüfte Aufgaben aus vorhandenen Unterrichts- und Archivmaterialien
 - Weitere Themen aus dem Unterricht nach fachlicher Prüfung
+- Glossar-Begriffe mit passenden Aufgaben und Lernfeldern verknüpfen
 - Lehrerbereich für eigene Aufgabensätze
 - Filter nach Schwierigkeitsgrad und Lernfeld
 - Mehr Aufgabentypen, beispielsweise Zuordnung und Reihenfolge

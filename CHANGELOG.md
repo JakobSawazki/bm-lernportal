@@ -11,6 +11,31 @@ Versioning.
 - Weitere Unterrichtsthemen und Aufgaben ergänzen
 - Rückmeldungen der Schülerinnen und Schüler auswerten
 
+## [1.2.0] - 2026-06-17
+
+### Hinzugefügt
+
+- Neuen Navigationsbereich `Glossar` für Desktop- und Mobilnavigation ergänzt
+- 25 zentrale Begriffe aus der Ausbildung Kaufmann/Kauffrau für
+  Büromanagement mit Kurztext, Detailerklärung, Praxisbeispiel und Mini-Quiz
+- Zusätzliche Lernstand-Option `Lernstand-JSON kopieren` für Schüler-PCs, auf
+  denen Dateidialog oder Download blockiert sein können
+- Manuelle JSON-Notlösung mit markierbarem Textfeld und Hinweis zum Speichern
+  als `bm-lernstand.json` auf dem Desktop
+
+### Geändert
+
+- Hinweise im Lernstand-Dialog präzisiert: Desktop wird vorgeschlagen, kann vom
+  Browser aber nicht ohne Dateidialog erzwungen werden
+- Offline-Cache auf Version 4 erhöht
+
+### Geprüft
+
+- JavaScript-Syntax und Glossar-Datenvalidierung
+- Lokaler Browserlauf mit Microsoft Edge gegen `localhost:4173`
+- Glossarübersicht, Begriff-Detailseite, Mini-Quiz, Desktop- und Mobilnavigation
+- Lernstand-JSON-Fallback bei simuliert blockierter Zwischenablage
+
 ## [1.1.0] - 2026-06-10
 
 ### Hinzugefügt

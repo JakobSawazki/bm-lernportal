@@ -1,4 +1,4 @@
-const CACHE_NAME = "bm-lernportal-v3";
+const CACHE_NAME = "bm-lernportal-v4";
 const APP_SHELL = [
   "./",
   "./index.html",

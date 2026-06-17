@@ -136,6 +136,483 @@ window.BM_CONTENT = {
       ]
     }
   ],
+  glossary: [
+    {
+      id: "ausbildungsvertrag",
+      term: "Ausbildungsvertrag",
+      category: "LF 1",
+      short: "Der Vertrag regelt Beginn, Dauer, Probezeit, Vergütung, Ausbildungsziel sowie Rechte und Pflichten in der Ausbildung.",
+      detail: "Der Ausbildungsvertrag ist die rechtliche Grundlage der Berufsausbildung. Er hält fest, was Betrieb und Auszubildende voneinander erwarten dürfen und müssen. Wichtig sind zum Beispiel Ausbildungsdauer, Probezeit, Ausbildungsvergütung, Urlaub, Ausbildungsort und Hinweise auf Tarifverträge oder Betriebsvereinbarungen.",
+      example: "Wenn ein Azubi wissen möchte, wie lange die Probezeit dauert oder welche Vergütung vereinbart wurde, ist der Ausbildungsvertrag die erste Anlaufstelle.",
+      quiz: {
+        question: "Wozu dient ein Ausbildungsvertrag vor allem?",
+        options: [
+          "Er ersetzt alle gesetzlichen Regelungen.",
+          "Er hält die wichtigsten Rechte und Pflichten der Ausbildung fest.",
+          "Er ist nur eine freiwillige Betriebsliste.",
+          "Er legt ausschließlich die Pausenzeiten im Betrieb fest."
+        ],
+        answer: 1,
+        explanation: "Der Ausbildungsvertrag dokumentiert die zentralen Ausbildungsbedingungen und ergänzt die gesetzlichen Vorgaben."
+      }
+    },
+    {
+      id: "aufbauorganisation",
+      term: "Aufbauorganisation",
+      category: "LF 1 / LF 11",
+      short: "Sie zeigt, welche Stellen, Abteilungen, Zuständigkeiten und Weisungswege es in einem Betrieb gibt.",
+      detail: "Die Aufbauorganisation beschreibt die Struktur eines Unternehmens. Sie beantwortet Fragen wie: Wer ist wofür zuständig? Wer darf wem Anweisungen geben? Welche Abteilungen arbeiten zusammen? Häufig wird sie in einem Organigramm dargestellt.",
+      example: "Im Organigramm erkennt man, ob die Buchhaltung direkt der Geschäftsführung oder einer kaufmännischen Leitung unterstellt ist.",
+      quiz: {
+        question: "Welche Frage beantwortet die Aufbauorganisation am ehesten?",
+        options: [
+          "Wie hoch ist der Lagerbestand?",
+          "Wer ist im Betrieb wofür zuständig?",
+          "Welcher Preis steht im Angebot?",
+          "Wann wird die nächste Bestellung ausgelöst?"
+        ],
+        answer: 1,
+        explanation: "Die Aufbauorganisation beschreibt Zuständigkeiten, Stellen und Weisungsbeziehungen im Betrieb."
+      }
+    },
+    {
+      id: "bueroprozess",
+      term: "Büroprozess",
+      category: "LF 2",
+      short: "Ein geplanter Arbeitsablauf im Büro, zum Beispiel Post bearbeiten, Termine koordinieren oder Dokumente ablegen.",
+      detail: "Büroprozesse sollen Aufgaben im Büro effizient, nachvollziehbar und zuverlässig machen. Dazu gehören klare Arbeitsschritte, passende Zuständigkeiten, geeignete Software und Regeln zur Ablage, Datensicherheit und Kommunikation.",
+      example: "Eine eingehende Kundenanfrage wird erfasst, an die zuständige Person weitergeleitet, beantwortet und anschließend dokumentiert.",
+      quiz: {
+        question: "Was macht einen guten Büroprozess aus?",
+        options: [
+          "Er ist zufällig und hängt nur von der Tagesform ab.",
+          "Er ist klar strukturiert, nachvollziehbar und effizient.",
+          "Er vermeidet jede Dokumentation.",
+          "Er darf nicht mit Software unterstützt werden."
+        ],
+        answer: 1,
+        explanation: "Büroprozesse sollen wiederholbare Arbeitsschritte übersichtlich und zuverlässig organisieren."
+      }
+    },
+    {
+      id: "zeitmanagement",
+      term: "Zeitmanagement",
+      category: "LF 2",
+      short: "Methoden, mit denen Aufgaben geplant, priorisiert und Störungen im Arbeitsalltag reduziert werden.",
+      detail: "Zeitmanagement hilft dabei, Aufgaben realistisch zu planen und Wichtiges von Unwichtigem zu trennen. Typische Hilfen sind To-do-Listen, Terminpläne, Pufferzeiten, ABC-Analyse und Eisenhower-Prinzip.",
+      example: "Eine dringende Kundenreklamation wird sofort bearbeitet, während eine interne Ablageaufgabe auf einen ruhigeren Zeitpunkt verschoben wird.",
+      quiz: {
+        question: "Was ist ein Ziel von Zeitmanagement?",
+        options: [
+          "Alle Aufgaben gleichzeitig beginnen.",
+          "Aufgaben sinnvoll planen und priorisieren.",
+          "Termine erst nach Ablauf kontrollieren.",
+          "Störungen grundsätzlich ignorieren."
+        ],
+        answer: 1,
+        explanation: "Zeitmanagement sorgt dafür, dass wichtige Aufgaben bewusst geplant und bearbeitet werden."
+      }
+    },
+    {
+      id: "datensicherheit",
+      term: "Datensicherheit",
+      category: "LF 2",
+      short: "Schutz von Daten vor Verlust, unbefugtem Zugriff, Veränderung oder Missbrauch.",
+      detail: "Datensicherheit betrifft technische und organisatorische Maßnahmen. Dazu gehören sichere Passwörter, Zugriffsrechte, Backups, sorgfältige Ablage, aktuelle Software und ein bewusster Umgang mit vertraulichen Informationen.",
+      example: "Eine Personalakte wird nur für berechtigte Personen freigegeben und regelmäßig gesichert.",
+      quiz: {
+        question: "Welche Maßnahme gehört zur Datensicherheit?",
+        options: [
+          "Passwörter offen auf den Bildschirm kleben.",
+          "Backups erstellen und Zugriffsrechte beachten.",
+          "Kundendaten in privaten Chats weiterleiten.",
+          "Alle Dateien ohne Ordnerstruktur speichern."
+        ],
+        answer: 1,
+        explanation: "Backups und klare Zugriffsrechte helfen, Daten verfügbar und geschützt zu halten."
+      }
+    },
+    {
+      id: "angebot",
+      term: "Angebot",
+      category: "LF 3 / LF 4",
+      short: "Eine verbindliche Erklärung, eine Ware oder Dienstleistung zu bestimmten Bedingungen liefern zu wollen.",
+      detail: "Ein Angebot enthält meist Artikel oder Leistung, Menge, Preis, Lieferzeit, Zahlungsbedingungen und Gültigkeit. Wird ein verbindliches Angebot rechtzeitig und unverändert angenommen, kann daraus ein Kaufvertrag entstehen.",
+      example: "Ein Lieferant bietet 50 Bürostühle zu je 89 Euro netto mit Lieferung innerhalb von zwei Wochen an.",
+      quiz: {
+        question: "Was gehört typischerweise in ein kaufmännisches Angebot?",
+        options: [
+          "Nur der Firmenname des Kunden.",
+          "Leistung, Menge, Preis sowie Liefer- und Zahlungsbedingungen.",
+          "Ausschließlich ein Werbeslogan.",
+          "Nur die private Telefonnummer des Verkäufers."
+        ],
+        answer: 1,
+        explanation: "Ein Angebot muss die wesentlichen Bedingungen enthalten, damit der Kunde entscheiden kann."
+      }
+    },
+    {
+      id: "auftragsbestaetigung",
+      term: "Auftragsbestätigung",
+      category: "LF 3",
+      short: "Sie bestätigt dem Kunden, dass ein Auftrag angenommen wurde und zu welchen Bedingungen er ausgeführt wird.",
+      detail: "Eine Auftragsbestätigung ist besonders wichtig, wenn vorher kein verbindliches Angebot vorlag oder wenn sich Angaben ändern. Sie schafft Klarheit über Menge, Preis, Liefertermin und weitere Bedingungen.",
+      example: "Nach einer telefonischen Bestellung sendet der Betrieb eine Auftragsbestätigung, damit beide Seiten dieselben Daten haben.",
+      quiz: {
+        question: "Warum wird eine Auftragsbestätigung häufig genutzt?",
+        options: [
+          "Um die vereinbarten Auftragsdaten nachvollziehbar festzuhalten.",
+          "Um eine Rechnung grundsätzlich ungültig zu machen.",
+          "Um den Kundenkontakt zu beenden.",
+          "Um die Lieferung ohne Dokumente zu ersetzen."
+        ],
+        answer: 0,
+        explanation: "Die Auftragsbestätigung dokumentiert, was bestellt wurde und zu welchen Bedingungen geliefert wird."
+      }
+    },
+    {
+      id: "lieferschein",
+      term: "Lieferschein",
+      category: "LF 3 / LF 4",
+      short: "Ein Begleitdokument zur Lieferung, das Art und Menge der gelieferten Waren aufführt.",
+      detail: "Der Lieferschein hilft beim Wareneingang und bei der Kontrolle der Lieferung. Er enthält meist Lieferant, Empfänger, Artikelbezeichnungen, Mengen und Lieferdatum. Preise stehen dort häufig nicht im Mittelpunkt.",
+      example: "Beim Wareneingang wird der Lieferschein mit der tatsächlich gelieferten Ware verglichen.",
+      quiz: {
+        question: "Wofür wird ein Lieferschein besonders genutzt?",
+        options: [
+          "Für die Kontrolle, ob die gelieferte Ware zur Bestellung passt.",
+          "Für die Berechnung der Einkommensteuer.",
+          "Als Ersatz für alle Lagerkennzahlen.",
+          "Als Werbeanzeige für neue Kunden."
+        ],
+        answer: 0,
+        explanation: "Der Lieferschein unterstützt die Prüfung von Art und Menge der gelieferten Waren."
+      }
+    },
+    {
+      id: "rechnung",
+      term: "Rechnung",
+      category: "LF 3 / LF 4",
+      short: "Dokument, mit dem eine Lieferung oder Leistung abgerechnet und zur Zahlung gestellt wird.",
+      detail: "Eine Rechnung enthält wichtige Angaben wie Verkäufer, Käufer, Rechnungsdatum, Leistung, Menge, Preis, Umsatzsteuer und Zahlungsziel. Vor der Zahlung sollte sie sachlich und rechnerisch geprüft werden.",
+      example: "Die Buchhaltung prüft, ob Preis, Menge und Umsatzsteuer mit Bestellung, Lieferschein und Vertrag übereinstimmen.",
+      quiz: {
+        question: "Was sollte vor dem Bezahlen einer Rechnung geprüft werden?",
+        options: [
+          "Nur die Schriftart.",
+          "Ob Leistung, Menge, Preis und Steuerangaben stimmen.",
+          "Ob die Rechnung möglichst bunt ist.",
+          "Ob der Kunde einen Werbebrief erhalten hat."
+        ],
+        answer: 1,
+        explanation: "Rechnungen werden sachlich und rechnerisch geprüft, bevor eine Zahlung veranlasst wird."
+      }
+    },
+    {
+      id: "beschaffungsprozess",
+      term: "Beschaffungsprozess",
+      category: "LF 4",
+      short: "Ablauf von Bedarfsermittlung, Lieferantensuche, Angebotsvergleich, Bestellung, Wareneingang und Bezahlung.",
+      detail: "Der Beschaffungsprozess sorgt dafür, dass benötigte Güter oder Dienstleistungen rechtzeitig, wirtschaftlich und in passender Qualität verfügbar sind. Dabei werden auch Nachhaltigkeit, Verträge und mögliche Störungen berücksichtigt.",
+      example: "Ein Betrieb ermittelt den Bedarf an Druckerpapier, vergleicht Angebote, bestellt und prüft nach Lieferung Menge und Qualität.",
+      quiz: {
+        question: "Welche Reihenfolge passt zum Beschaffungsprozess?",
+        options: [
+          "Rechnung bezahlen, Bedarf ermitteln, Angebot vergleichen.",
+          "Bedarf ermitteln, Angebote vergleichen, bestellen, Wareneingang prüfen.",
+          "Lieferung reklamieren, bevor bestellt wurde.",
+          "Marketing planen, Bewerbung schreiben, Mahnung senden."
+        ],
+        answer: 1,
+        explanation: "Beschaffung beginnt mit dem Bedarf und endet typischerweise mit Prüfung und Zahlung."
+      }
+    },
+    {
+      id: "nutzwertanalyse",
+      term: "Nutzwertanalyse",
+      category: "LF 4",
+      short: "Ein Verfahren, um Angebote nach mehreren qualitativen und quantitativen Kriterien zu vergleichen.",
+      detail: "Bei der Nutzwertanalyse werden Kriterien festgelegt, gewichtet und bewertet. So lassen sich Lieferanten nicht nur nach dem Preis, sondern auch nach Qualität, Lieferzeit, Service oder Nachhaltigkeit vergleichen.",
+      example: "Ein günstiger Lieferant kann schlechter abschneiden, wenn Qualität und Lieferzuverlässigkeit deutlich schwächer sind.",
+      quiz: {
+        question: "Wann ist eine Nutzwertanalyse besonders sinnvoll?",
+        options: [
+          "Wenn nur ein einziges Kriterium zählt.",
+          "Wenn mehrere Kriterien gewichtet verglichen werden sollen.",
+          "Wenn keine Entscheidung getroffen werden darf.",
+          "Wenn Preise grundsätzlich verboten sind."
+        ],
+        answer: 1,
+        explanation: "Die Nutzwertanalyse macht Entscheidungen mit mehreren Kriterien nachvollziehbar."
+      }
+    },
+    {
+      id: "kaufvertrag",
+      term: "Kaufvertrag",
+      category: "LF 4",
+      short: "Ein Vertrag, bei dem eine Sache oder Leistung gegen Zahlung eines Kaufpreises übertragen wird.",
+      detail: "Ein Kaufvertrag kommt durch zwei übereinstimmende Willenserklärungen zustande: Angebot und Annahme. Daraus entstehen Pflichten, zum Beispiel Lieferung mangelfreier Ware und Zahlung des Kaufpreises.",
+      example: "Ein Büro bestellt 20 Monitore und der Lieferant nimmt die Bestellung an. Dann muss geliefert und bezahlt werden.",
+      quiz: {
+        question: "Wodurch kommt ein Kaufvertrag grundsätzlich zustande?",
+        options: [
+          "Durch Angebot und Annahme.",
+          "Durch eine zufällige Lieferung ohne Einigung.",
+          "Durch eine Lagerkarte.",
+          "Durch jede interne Notiz."
+        ],
+        answer: 0,
+        explanation: "Ein Kaufvertrag entsteht durch zwei inhaltlich übereinstimmende Willenserklärungen."
+      }
+    },
+    {
+      id: "wareneingangskontrolle",
+      term: "Wareneingangskontrolle",
+      category: "LF 4",
+      short: "Prüfung, ob gelieferte Waren vollständig, richtig und äußerlich unbeschädigt angekommen sind.",
+      detail: "Bei der Wareneingangskontrolle werden Lieferung, Lieferschein und Bestellung verglichen. Typische Prüfpunkte sind Menge, Artikel, sichtbare Schäden, Termin und gegebenenfalls Qualität. Abweichungen sollten dokumentiert und gemeldet werden.",
+      example: "Sind 100 Ordner bestellt, aber nur 90 geliefert worden, wird die Abweichung festgehalten und geklärt.",
+      quiz: {
+        question: "Was ist bei der Wareneingangskontrolle fachlich sinnvoll?",
+        options: [
+          "Beschädigungen ignorieren und sofort einlagern.",
+          "Lieferung mit Bestellung und Lieferschein vergleichen.",
+          "Nur den Preis im Katalog prüfen.",
+          "Die Ware ohne Prüfung weiterverkaufen."
+        ],
+        answer: 1,
+        explanation: "Die Wareneingangskontrolle prüft, ob Art, Menge und Zustand der Lieferung stimmen."
+      }
+    },
+    {
+      id: "optimale-bestellmenge",
+      term: "Optimale Bestellmenge",
+      category: "LF 4",
+      short: "Die Bestellmenge, bei der Bestellkosten und Lagerhaltungskosten zusammen möglichst niedrig sind.",
+      detail: "Je größer eine Bestellung ist, desto seltener muss bestellt werden. Gleichzeitig steigt aber der durchschnittliche Lagerbestand. Die optimale Bestellmenge sucht den wirtschaftlichen Ausgleich zwischen Bestellkosten und Lagerhaltungskosten.",
+      example: "Viele kleine Bestellungen senken Lagerbestände, verursachen aber mehr Bestellvorgänge.",
+      quiz: {
+        question: "Was wird bei der optimalen Bestellmenge minimiert?",
+        options: [
+          "Nur die Anzahl der Mitarbeitenden.",
+          "Die Summe aus Bestellkosten und Lagerhaltungskosten.",
+          "Ausschließlich der Verkaufspreis.",
+          "Die Zahl der Kundenkontakte."
+        ],
+        answer: 1,
+        explanation: "Die optimale Bestellmenge betrachtet den Zielkonflikt zwischen Bestell- und Lagerkosten."
+      }
+    },
+    {
+      id: "lagerkennzahlen",
+      term: "Lagerkennzahlen",
+      category: "LF 4",
+      short: "Zahlen wie Durchschnittsbestand, Umschlagshäufigkeit, Lagerdauer und Lagerzinsen zur Beurteilung eines Lagers.",
+      detail: "Lagerkennzahlen machen sichtbar, wie wirtschaftlich Lagerbestände sind. Eine hohe Umschlagshäufigkeit bedeutet meist, dass Waren schneller verkauft oder verbraucht werden und weniger Kapital gebunden ist.",
+      example: "Aus Wareneinsatz und durchschnittlichem Lagerbestand lässt sich die Umschlagshäufigkeit berechnen.",
+      quiz: {
+        question: "Was zeigt eine hohe Umschlagshäufigkeit häufig an?",
+        options: [
+          "Waren liegen sehr lange unverändert im Lager.",
+          "Bestände werden schneller umgesetzt.",
+          "Es gibt keine Lagerkosten mehr.",
+          "Die Rechnung muss nicht geprüft werden."
+        ],
+        answer: 1,
+        explanation: "Eine hohe Umschlagshäufigkeit weist auf einen schnelleren Warenumschlag hin."
+      }
+    },
+    {
+      id: "skonto",
+      term: "Skonto",
+      category: "LF 4 / LF 9",
+      short: "Ein Preisnachlass, wenn eine Rechnung innerhalb einer kurzen Frist bezahlt wird.",
+      detail: "Skonto soll schnelle Zahlungen fördern. Der Käufer spart einen kleinen Prozentsatz, wenn er innerhalb der Skontofrist zahlt. Für den Betrieb ist wichtig zu prüfen, ob die Skontonutzung wirtschaftlich und liquiditätsmäßig möglich ist.",
+      example: "Zahlungsbedingung: 2 Prozent Skonto bei Zahlung innerhalb von 10 Tagen, sonst 30 Tage netto.",
+      quiz: {
+        question: "Was bedeutet Skonto?",
+        options: [
+          "Ein Zuschlag für späte Zahlung.",
+          "Ein Nachlass für schnelle Zahlung innerhalb der Skontofrist.",
+          "Ein Rabatt nur für Werbung.",
+          "Eine Lagerkennzahl."
+        ],
+        answer: 1,
+        explanation: "Skonto ist ein Zahlungsnachlass, wenn fristgerecht schnell bezahlt wird."
+      }
+    },
+    {
+      id: "marketing-mix",
+      term: "Marketing-Mix",
+      category: "LF 5",
+      short: "Die abgestimmte Kombination von Marketinginstrumenten, etwa Produkt-, Preis-, Kommunikations- und Vertriebspolitik.",
+      detail: "Der Marketing-Mix hilft Unternehmen, Kunden gezielt anzusprechen und ein Angebot erfolgreich am Markt zu platzieren. Im Büromanagement spielen besonders Preis- und Kommunikationspolitik sowie Kundenbindung eine wichtige Rolle.",
+      example: "Ein Betrieb kombiniert einen Einführungspreis mit Social-Media-Werbung und persönlicher Beratung.",
+      quiz: {
+        question: "Was beschreibt der Marketing-Mix?",
+        options: [
+          "Die Mischung verschiedener Marketinginstrumente.",
+          "Nur den Lagerort der Waren.",
+          "Ausschließlich den Arbeitsvertrag.",
+          "Eine gesetzliche Pausenregelung."
+        ],
+        answer: 0,
+        explanation: "Der Marketing-Mix bündelt mehrere absatzpolitische Instrumente zu einem abgestimmten Konzept."
+      }
+    },
+    {
+      id: "kundenbindung",
+      term: "Kundenbindung",
+      category: "LF 5 / LF 7",
+      short: "Maßnahmen, die dafür sorgen, dass Kunden zufrieden bleiben und wieder beim Unternehmen kaufen.",
+      detail: "Kundenbindung entsteht durch verlässliche Leistung, gute Kommunikation, Service, faire Problemlösungen und passende Angebote. Beschwerden können eine Chance sein, Vertrauen zurückzugewinnen.",
+      example: "Eine Reklamation wird schnell, freundlich und lösungsorientiert bearbeitet, damit der Kunde dem Betrieb treu bleibt.",
+      quiz: {
+        question: "Welche Handlung unterstützt Kundenbindung am ehesten?",
+        options: [
+          "Beschwerden grundsätzlich ignorieren.",
+          "Kundenanliegen zuverlässig und wertschätzend bearbeiten.",
+          "Liefertermine absichtlich offenlassen.",
+          "Nach dem Kauf jede Kommunikation abbrechen."
+        ],
+        answer: 1,
+        explanation: "Zuverlässiger Service und wertschätzende Kommunikation stärken die Kundenbeziehung."
+      }
+    },
+    {
+      id: "personalbedarf",
+      term: "Personalbedarf",
+      category: "LF 8",
+      short: "Die Menge und Qualifikation an Mitarbeitenden, die ein Betrieb für seine Aufgaben benötigt.",
+      detail: "Personalbedarf kann quantitativ und qualitativ betrachtet werden. Quantitativ geht es um die Anzahl der Personen, qualitativ um Kompetenzen, Erfahrungen und Anforderungen an eine Stelle.",
+      example: "Wenn viele neue Aufträge eingehen, braucht der Betrieb vielleicht mehr Mitarbeitende im Kundenservice mit guten Kommunikationskenntnissen.",
+      quiz: {
+        question: "Was bedeutet qualitativer Personalbedarf?",
+        options: [
+          "Die benötigten Fähigkeiten und Qualifikationen.",
+          "Ausschließlich die Zahl der Schreibtische.",
+          "Nur die Höhe des Lagerbestands.",
+          "Die Anzahl der Rechnungen pro Monat."
+        ],
+        answer: 0,
+        explanation: "Qualitativer Personalbedarf beschreibt, welche Kompetenzen für eine Aufgabe benötigt werden."
+      }
+    },
+    {
+      id: "liquiditaet",
+      term: "Liquidität",
+      category: "LF 9",
+      short: "Die Fähigkeit eines Unternehmens, fällige Zahlungen rechtzeitig leisten zu können.",
+      detail: "Liquidität ist überlebenswichtig: Ein Unternehmen kann nur dann handlungsfähig bleiben, wenn es Rechnungen, Löhne, Mieten und Kredite fristgerecht bezahlen kann. Dazu müssen Einzahlungen und Auszahlungen geplant und überwacht werden.",
+      example: "Ein Betrieb mahnt offene Kundenrechnungen, um genügend Geld für eigene Lieferantenrechnungen zu haben.",
+      quiz: {
+        question: "Wann ist ein Unternehmen liquide?",
+        options: [
+          "Wenn es alle Zahlungen rechtzeitig leisten kann.",
+          "Wenn es keine Kunden hat.",
+          "Wenn es nur große Lagerbestände besitzt.",
+          "Wenn es keine Rechnungen schreibt."
+        ],
+        answer: 0,
+        explanation: "Liquidität bedeutet Zahlungsfähigkeit zum jeweiligen Fälligkeitstermin."
+      }
+    },
+    {
+      id: "finanzierung",
+      term: "Finanzierung",
+      category: "LF 9",
+      short: "Beschaffung von Kapital, um Investitionen oder laufende Zahlungen zu ermöglichen.",
+      detail: "Finanzierung kann zum Beispiel durch Darlehen, Kontokorrentkredit, Lieferantenkredit, Leasing, Factoring, Beteiligung oder Selbstfinanzierung erfolgen. Die passende Form hängt von Kosten, Risiko, Laufzeit und Zweck ab.",
+      example: "Für neue Büroausstattung prüft ein Betrieb, ob Leasing oder ein Bankdarlehen wirtschaftlicher ist.",
+      quiz: {
+        question: "Welche Aussage zur Finanzierung stimmt?",
+        options: [
+          "Es gibt nur eine einzige Finanzierungsform.",
+          "Finanzierungsformen unterscheiden sich etwa nach Kosten, Laufzeit und Risiko.",
+          "Finanzierung betrifft nie Investitionen.",
+          "Skonto ist dasselbe wie ein langfristiges Darlehen."
+        ],
+        answer: 1,
+        explanation: "Finanzierungsentscheidungen müssen mehrere wirtschaftliche und rechtliche Kriterien berücksichtigen."
+      }
+    },
+    {
+      id: "deckungsbeitrag",
+      term: "Deckungsbeitrag",
+      category: "LF 10",
+      short: "Betrag, der nach Abzug der variablen Kosten vom Verkaufserlös zur Deckung der Fixkosten bleibt.",
+      detail: "Der Deckungsbeitrag zeigt, welchen Beitrag ein Produkt oder Auftrag zur Deckung fixer Kosten und zum Gewinn leistet. Er ist wichtig für Entscheidungen über Zusatzaufträge, Preisuntergrenzen und Gewinnschwelle.",
+      example: "Verkaufspreis 50 Euro, variable Kosten 30 Euro: Der Deckungsbeitrag beträgt 20 Euro.",
+      quiz: {
+        question: "Wie berechnet man den Deckungsbeitrag pro Stück?",
+        options: [
+          "Fixkosten plus Umsatzsteuer.",
+          "Verkaufserlös minus variable Kosten.",
+          "Lagerbestand geteilt durch Wareneinsatz.",
+          "Rechnungsbetrag plus Skonto."
+        ],
+        answer: 1,
+        explanation: "Der Deckungsbeitrag ergibt sich aus Erlös abzüglich variabler Kosten."
+      }
+    },
+    {
+      id: "geschaeftsprozess",
+      term: "Geschäftsprozess",
+      category: "LF 11",
+      short: "Eine zusammenhängende Folge von Tätigkeiten, die ein betriebliches Ergebnis erzeugt.",
+      detail: "Geschäftsprozesse beschreiben, wie Arbeit im Betrieb abläuft. Man unterscheidet häufig Kernprozesse, die direkt Wert für Kunden schaffen, und Unterstützungsprozesse, die diese Arbeit ermöglichen.",
+      example: "Von der Kundenanfrage über Angebot, Auftrag, Lieferung und Rechnung läuft ein typischer Auftragsprozess.",
+      quiz: {
+        question: "Was ist ein Geschäftsprozess?",
+        options: [
+          "Eine zusammenhängende Folge betrieblicher Tätigkeiten.",
+          "Nur ein einzelner Preis auf einer Rechnung.",
+          "Ein privater Kalendertermin.",
+          "Eine zufällige Sammlung alter Dateien."
+        ],
+        answer: 0,
+        explanation: "Geschäftsprozesse verbinden mehrere Arbeitsschritte zu einem betrieblichen Ablauf."
+      }
+    },
+    {
+      id: "reisekostenabrechnung",
+      term: "Reisekostenabrechnung",
+      category: "LF 12",
+      short: "Abrechnung der Kosten, die bei einer Geschäftsreise entstanden sind.",
+      detail: "Eine Reisekostenabrechnung fasst zum Beispiel Fahrtkosten, Übernachtungskosten, Verpflegungsmehraufwand und sonstige Belege zusammen. Sie muss nachvollziehbar dokumentiert und nach betrieblichen Regeln geprüft werden.",
+      example: "Nach einer Messe werden Bahnticket, Hotelrechnung und Taxi-Beleg gesammelt und abgerechnet.",
+      quiz: {
+        question: "Was gehört typischerweise zu einer Reisekostenabrechnung?",
+        options: [
+          "Belege für Fahrt, Unterkunft und weitere Reisekosten.",
+          "Die Lagerkarte eines Artikels.",
+          "Nur ein Organigramm.",
+          "Ausschließlich eine Werbeanzeige."
+        ],
+        answer: 0,
+        explanation: "Reisekosten müssen mit passenden Belegen und Angaben nachvollziehbar abgerechnet werden."
+      }
+    },
+    {
+      id: "projektstrukturplan",
+      term: "Projektstrukturplan",
+      category: "LF 13",
+      short: "Eine Übersicht, die ein Projekt in Teilaufgaben und Arbeitspakete gliedert.",
+      detail: "Der Projektstrukturplan macht sichtbar, welche Aufgaben im Projekt erledigt werden müssen. Er hilft bei Terminplanung, Verantwortlichkeiten, Ressourcenplanung und Kontrolle des Projektfortschritts.",
+      example: "Für eine Schulveranstaltung werden Arbeitspakete wie Raum, Einladung, Technik, Catering und Auswertung festgelegt.",
+      quiz: {
+        question: "Wozu dient ein Projektstrukturplan?",
+        options: [
+          "Er gliedert ein Projekt in überschaubare Aufgabenpakete.",
+          "Er ersetzt jede Kommunikation im Team.",
+          "Er berechnet automatisch den Skontoabzug.",
+          "Er ist nur für die Wareneingangskontrolle gedacht."
+        ],
+        answer: 0,
+        explanation: "Der Projektstrukturplan zerlegt das Projekt in planbare und kontrollierbare Arbeitspakete."
+      }
+    }
+  ],
   questions: [
     {
       id: "lag-01",
@@ -666,4 +1143,3 @@ window.BM_CONTENT = {
     }
   ]
 };
-

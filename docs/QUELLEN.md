@@ -30,6 +30,16 @@ uebernommen wurden.
   GitHub Pages wurde erfolgreich veröffentlicht
 - Produktive URL: `https://jakobsawazki.github.io/bm-lernportal/`
 
+### Bildungsplan Kaufmann/Kauffrau für Büromanagement
+
+- Datei: `assets/Bildungsplan.pdf`
+- Prüfdatum: 17. Juni 2026
+- Ergebnis: Lernfelder 1 bis 13 und fachliche Kompetenzschwerpunkte wurden
+  ausgewertet
+- Verwendung: Grundlage für das Glossar in `website/content.js`
+- Veröffentlichungsregel: Die PDF wird nicht über `website/` ausgeliefert; im
+  Portal stehen eigenständig formulierte Kurztexte, Beispiele und Quizfragen.
+
 ### Lokaler Ausgangsordner
 
 - Pfad: `C:\Users\Jakob\Documents\BM`
@@ -69,6 +79,18 @@ uebernommen wurden.
 - Verwendung: ausschließlich als lokale Praxisbilder auf der Startseite
 - Nachbearbeitung: auf 1200 × 800 Pixel verkleinert und als WebP komprimiert
 
+### Lokales Archiv
+
+- Pfad: `Archiv/`
+- Prüfdatum: 17. Juni 2026
+- Inhalt: ältere statische `Lager-Quest`-App inklusive ZIP und
+  Lagerwirtschafts-AGENTS-Datei
+- Ergebnis: Enthält brauchbare Lagerwirtschaftsfragen und Kompetenznotizen,
+  ist aber kein Teil der produktiven Website
+- Entscheidung: Nicht gelöscht, weil die Inhalte als lokale Referenz für
+  spätere Aufgabenvarianten nutzbar sind; nicht ins öffentliche Deployment
+  übernommen
+
 ## Importprotokoll
 
 Sobald Quelldateien gefunden werden, ist fuer jeden Import festzuhalten:
@@ -76,6 +98,7 @@ Sobald Quelldateien gefunden werden, ist fuer jeden Import festzuhalten:
 | Datum | Quelle | Ausgangsversion | Ziel | Pruefsumme/Commit | Bemerkung |
 | --- | --- | --- | --- | --- | --- |
 | 2026-06-09 | ChatGPT-Projekt BM | Projektstand Juni 2026 | `website/content.js` | Release 1.0.0 | Fachthemen in eigene Übungen überführt |
+| 2026-06-17 | Bildungsplan Kaufmann/Kauffrau für Büromanagement | KMK-Beschluss 27.09.2013, BW-Fassung | `website/content.js` | Release 1.2.0 | Glossarbegriffe und Quizfragen eigenständig formuliert |
 
 ## Regeln fuer Quellen
 

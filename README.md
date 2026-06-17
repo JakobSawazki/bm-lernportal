@@ -12,14 +12,14 @@ ein lokales Punktesystem.
 
 | Merkmal | Stand |
 | --- | --- |
-| Release | `1.1.0` |
-| Stichtag | 10. Juni 2026 |
-| Projektphase | Erste produktive Fassung |
+| Release | `1.2.0` |
+| Stichtag | 17. Juni 2026 |
+| Projektphase | Glossar- und Sicherungsupdate |
 | Website-Quellcode | Vollständig in `website/` |
 | Git-Repository | `JakobSawazki/bm-lernportal` |
 | Hosting | GitHub Pages |
 | Datenspeicherung | Ausschließlich lokal im Browser |
-| Letzte technische Prüfung | 9. Juni 2026 |
+| Letzte technische Prüfung | 17. Juni 2026 |
 
 ## Ziele
 
@@ -96,8 +96,10 @@ BM/
 - 7 freischaltbare Abzeichen
 - zufälliger Prüfungs-Sprint mit 10 Aufgaben
 - automatische Fehlerliste
+- Glossar mit 25 Begriffen, kurzen Erklärungen, Detailseiten und Mini-Quiz
 - Versionierter Datei-Export und -Import des lokalen Lernstands
 - Desktop als vorgeschlagener Speicherort, mit Download-Fallback
+- JSON-Kopie als Notlösung, wenn Schüler-PCs Speichern oder Download blockieren
 - Responsive Praxisfotos zu Teamarbeit, Lagerlogistik und Tabellenkalkulation
 - Feedback per vorbereitetem E-Mail-Entwurf an die Lehrkraft
 - installierbare Web-App mit einfachem Offline-Cache
@@ -112,7 +114,7 @@ Das Projekt verwendet semantische Versionsnummern:
 - Minor-Version: Rueckwaertskompatible neue Inhalte oder Funktionen
 - Major-Version: Grundlegende, nicht kompatible Neuausrichtung
 
-Aktueller Stand: `1.1.0`
+Aktueller Stand: `1.2.0`
 
 ## Lokal starten
 
@@ -149,6 +151,7 @@ stehen in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 ## Offene Punkte
 
 - Weitere Unterrichtsinhalte nach fachlicher Prüfung ergänzen
+- Glossar bei neuen Unterrichtsthemen fortlaufend ergänzen
 - Konkrete Prüfungstermine oder Klasseninformationen nur bei Bedarf und ohne
   personenbezogene Daten ergänzen
 - Optional einen Lehrerbereich für eigene Aufgabensätze entwickeln
